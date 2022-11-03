@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=poppins:100,200,300,400,500,600,700,800,900');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /*Padding and border are included in the width and height*/
+    font-family: 'poppins', sans-serif;
+}
+
+:root {      /*Storage for fonts, colors etc*/
+    --clr: #222327; /*Stores the color under new name*/
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /*Takes up 100% of the view page. Using for example*/
+    background-color: var(--clr);
+}
+
+.navigation {    /*Navigation bar*/
+    position: relative;
+    width: 400px;
+    height: 70px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;  /*rounds the corners of the box*/
+}
+
+.navigation ul {      /*Total content*/
+    display: flex;
+    width: 350px;  /*Limits the content to 350px, just inside the nav width*/
+}
+
+.navigation ul li {     /*Maybe just the lists?*/ /* *****Need to find out***** */
+    position: relative;
+    list-style: none;  /*Removes the dot from the lists*/
+    width: 70px;
+    height: 70px;
+    z-index: 1;  /*Specifies the stack order*/
+}
+
+.navigation ul li a {    /*Each individual box*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.navigation ul li a .icon {     /*Icon only*/
+    position: relative;
+    display: block;
+    line-height: 75px;    /*Distance between lines of*/
+    font-size: 1.5em;
+    transition: 0.5s;     /*Speed the icon moves*/
+    color: var(--clr);
+}
+
+.navigation ul li:hover a .icon {   /*Hovers icon only. li:hover so hover is over the list box*/
+    transform: translateY(-35px);   /*When mouse hovers over*/
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;   /*Sets the space between letters*/
+    transition: 0.5s;         /*Speed the text moves*/
+    opacity: 0;               /*So text is hidden over the hover*/
+}
+
+.navigation ul li:hover a .text {     /*Text hover*/
+    opacity: 1;                       /*Shows text on hover*/
+    transform: translateY(10px);      /*Moves text down 10px*/
+}
